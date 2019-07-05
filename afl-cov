@@ -821,6 +821,7 @@ def init_tracking(cov_paths, cargs):
 ### credit:
 ### http://stackoverflow.com/questions/377017/test-if-executable-exists-in-python
 def is_exe(fpath):
+    fpath = os.path.expanduser(fpath)
     return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
 
 def is_bin_gcov_enabled(binary, cargs):
